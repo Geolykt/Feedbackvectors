@@ -1,0 +1,5 @@
+{
+  "entrypoint": "de.geolykt.feedbackvectors.Feebackvectors",
+  "name": "Feedbackvectors",
+  "version": "1.0.0"
+}

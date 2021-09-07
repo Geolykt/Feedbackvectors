@@ -66,32 +66,32 @@ public class FeedbackvectorsListener implements Listener {
 
             // Lookup by identity / UID
             if (!(actors instanceof IdentityFeedbackVector)) {
-                IdentityFeedbackVector<ActorSpec> actors2 = new IdentityFeedbackVector<>(actors, new LinkedList<>());
+                IdentityFeedbackVector<ActorSpec> actors2 = new IdentityFeedbackVector<>(new LinkedList<>(), actors);
                 EventManager.handleEvent(new FeedbackVectorCreationEvent(VectorType.GU_ACTORS, actors2));
                 galimulatorUnsafe.setActorsUnsafe(actors2);
             }
             if (!(disruptedStars instanceof IdentityFeedbackVector)) {
-                IdentityFeedbackVector<Star> vect = new IdentityFeedbackVector<>(disruptedStars, new LinkedList<>());
+                IdentityFeedbackVector<Star> vect = new IdentityFeedbackVector<>(new LinkedList<>(), disruptedStars);
                 EventManager.handleEvent(new FeedbackVectorCreationEvent(VectorType.GU_DISTRUPTED_STARS, vect));
                 galimulatorUnsafe.setDisruptedStarsUnsafe(vect);
             }
             if (!(empires instanceof IdentityFeedbackVector)) {
-                IdentityFeedbackVector<ActiveEmpire> vect = new IdentityFeedbackVector<>(empires, new LinkedList<>());
+                IdentityFeedbackVector<ActiveEmpire> vect = new IdentityFeedbackVector<>(new LinkedList<>(), empires);
                 EventManager.handleEvent(new FeedbackVectorCreationEvent(VectorType.GU_ACTIVE_EMPIRES, vect));
                 galimulatorUnsafe.setEmpiresUnsafe(vect);
             }
             if (!(followedPeople instanceof IdentityFeedbackVector)) {
-                IdentityFeedbackVector<DynastyMember> vect = new IdentityFeedbackVector<>(followedPeople, new LinkedList<>());
+                IdentityFeedbackVector<DynastyMember> vect = new IdentityFeedbackVector<>(new LinkedList<>(), followedPeople);
                 EventManager.handleEvent(new FeedbackVectorCreationEvent(VectorType.GU_FOLLOWED_PEOPLE, vect));
                 galimulatorUnsafe.setFollowedPeopleUnsafe(vect);
             }
             if (!(people instanceof IdentityFeedbackVector)) {
-                IdentityFeedbackVector<DynastyMember> vect = new IdentityFeedbackVector<>(people, new LinkedList<>());
+                IdentityFeedbackVector<DynastyMember> vect = new IdentityFeedbackVector<>(new LinkedList<>(), people);
                 EventManager.handleEvent(new FeedbackVectorCreationEvent(VectorType.GU_PEOPLE, vect));
                 galimulatorUnsafe.setPeopleUnsafe(vect);
             }
             if (!(stars instanceof IdentityFeedbackVector)) {
-                IdentityFeedbackVector<Star> vect = new IdentityFeedbackVector<>(stars, new LinkedList<>());
+                IdentityFeedbackVector<Star> vect = new IdentityFeedbackVector<>(new LinkedList<>(), stars);
                 EventManager.handleEvent(new FeedbackVectorCreationEvent(VectorType.GU_STARS, vect));
                 galimulatorUnsafe.setStarsUnsafe(vect);
             }

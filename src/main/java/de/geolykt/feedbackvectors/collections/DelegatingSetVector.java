@@ -34,11 +34,9 @@ public class DelegatingSetVector<E> extends DelegatingVector<E> {
 
     @Override
     public boolean addAll(int index, Collection<? extends E> c) {
-        if (super.addAll(index, c)) {
-            set.addAll(c);
-            return true;
-        }
-        return false;
+        delegate.addAll(index, c);
+        set.addAll(c);
+        return true;
     }
 
     @Override

@@ -30,13 +30,15 @@ public class IdentityFeedbackVector<E extends Identifiable> extends IdentityLook
 
     public IdentityFeedbackVector(Collection<? extends E> c) {
         this();
-        super.addAll(c);
+        if (c != null) {
+            addAll(c); // We don't trigger the event listeners because there are none
+        }
     }
 
     public IdentityFeedbackVector(List<E> delegate, @Nullable Collection<? extends E> c) {
         super(delegate, null);
         if (c != null) {
-            super.addAll(c);
+            addAll(c); // We don't trigger the event listeners because there are none
         }
     }
 
@@ -48,7 +50,7 @@ public class IdentityFeedbackVector<E extends Identifiable> extends IdentityLook
 
     @Override
     public boolean addAll(int index, Collection<? extends E> c) {
-        if (super.addAll(c)) {
+        if (super.addAll(index, c)) {
             c.forEach(this::feedbackAdd);
             return true;
         }

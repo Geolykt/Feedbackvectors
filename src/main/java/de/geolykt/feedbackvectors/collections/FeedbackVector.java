@@ -49,7 +49,7 @@ public class FeedbackVector<E> extends DelegatingSetVector<E> implements Feedbac
 
     @Override
     public boolean addAll(int index, Collection<? extends E> c) {
-        if (super.addAll(c)) {
+        if (super.addAll(index, c)) {
             c.forEach(this::feedbackAdd);
             return true;
         }
